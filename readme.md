@@ -27,3 +27,6 @@ checkout -- file可以丢弃工作区的修改，让这个文件回到最近一�
 reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区：
 
 git rm file 删除文件
+
+git push  把当前分支master推送到远程。 -u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来
+
