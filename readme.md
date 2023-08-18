@@ -30,3 +30,16 @@ git rm file 删除文件
 
 git push  把当前分支master推送到远程。 -u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来
 
+分支
+
+查看分支：git branch
+
+创建分支：git branch name
+
+切换分支：git checkout name或者git switch name
+
+创建+切换分支：git checkout -b name或者git switch -c name
+
+合并某分支到当前分支：git merge name
+
+删除分支：git branch -d name
