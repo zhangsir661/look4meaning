@@ -1,6 +1,7 @@
 ## 正则表达式
 ### 元字符
 **\d** 匹配任意数字字符 
+**\D** 匹配一个非数组字符
 **\w** 匹配任意字母数字字符 
 **.** 匹配任意字符（初换行符）
 ### 量词
@@ -38,6 +39,8 @@
 
 ## python
 
+
+
 ### re
 re.match(pattern, string, flags=0)返回一个匹配的对象，
 group(num=0)，可以一次输入多个组号，在这种情况下它将返回一个包含那些组所对应值的**元组**。
@@ -51,3 +54,11 @@ re.sub(pattern, repl, string, count=0, flags=0)
 repl : 替换的字符串，也可为一个函数。
 string : 要被查找替换的原始字符串。
 count : 模式匹配后替换的最大次数，默认 0 表示替换所有的匹配。
+
+re.compile(pattern[, flags])用于编译正则表达式，生成一个正则表达式(Pattern)对象，供 match() 和 search() 这两个函数使用。
+
+re.findall(string[, pos[, endpos]])匹配所有子串，返回一个列表；多匹配模式，返回元祖
+
+re.finditer(pattern, string, flags=0)匹配所有子串，作为迭代器返回
+
+re.split(pattern, string[, maxsplit=0, flags=0])
