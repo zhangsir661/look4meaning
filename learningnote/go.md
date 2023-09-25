@@ -90,8 +90,17 @@ eg：type Vertex struct {
 ### 数组
 
 var a [10]int
-切片
+**切片**
 []T  a[low:high](同python)
 但是更改切片会修改底层数组
 零值切片的值为 nil
+
+make函数 
+
+### 映射
+map
+
+
+
+
 
