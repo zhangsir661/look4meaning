@@ -24,12 +24,33 @@ int, uint 和 uintptr 在 32 位系统上通常为 32 位宽，在 64 位系统�
 
 ### 变量
 变量声明用空格隔开
+var identifier type
 变量声明也可以“分组”成一个语法块。
+var identifier1, identifier2 type
+指定变量类型，**如果没有初始化，则变量默认为零值**
 默认值
 0 false “”
 
+:=赋值操作符 
+只能被用在函数体内
+### 常量
+
+const identifier [type] = value
 Go 在不同类型的项之间赋值时需要**显式转换**
 常量不能用 := 语法声明  用**const**关键字
+
+**iota**  const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)
+const (
+            a = iota   //0
+            b          //1
+            c          //2
+            d = "ha"   //独立值，iota += 1
+            e          //"ha"   iota += 1
+            f = 100    //iota +=1
+            g          //100  iota +=1
+            h = iota   //7,恢复计数
+            i          //8
+    )
 
 ### 格式化字符串
 
@@ -37,7 +58,7 @@ Go 在不同类型的项之间赋值时需要**显式转换**
 **%#v**	输出 Go 语言语法格式的值 **%T**	输出 Go 语言语法格式的类型和值
 
 ### 循环
-Go中只有一种循环：for循环
+Go中只有一种循环：**for循环**
 
 基本的 for 循环由三部分组成，它们用分号隔开：
 
@@ -56,6 +77,10 @@ eg：sum := 1
 	}
 再去掉条件 无限循环
 
+**goto** 转移到过程中的行
+
+### 条件
+
 if 语句可以在条件表达式前执行一个简单的语句。
 eg：if v := math.Pow(x, n); v < lim {
 		return v
@@ -64,7 +89,13 @@ eg：if v := math.Pow(x, n); v < lim {
 
 switch语句
 
+select语句
+
 ### 函数
+
+func function_name( [parameter list] ) [return_types] {
+   函数体
+}
 defer会将函数推迟到外层函数返回之后执行
 推迟的函数调用会被压入一个**栈**中。当外层函数返回时，被推迟的函数会按照后进先出的顺序调用
 eg：for i := 0; i < 10; i++ {
@@ -143,3 +174,7 @@ t, ok := i.(T)
 类似switch
 
 ### Stringer
+
+### error
+
+### io.Reader
