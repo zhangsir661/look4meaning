@@ -1,6 +1,6 @@
 ## 变量声明
 
-**{**不能放在单独的一行
+**不能放在单独的一行**
 var 声明
 
 简洁赋值语句 := 可在类型明确的地方代替 var 声明
@@ -23,26 +23,35 @@ complex64 complex128
 int, uint 和 uintptr 在 32 位系统上通常为 32 位宽，在 64 位系统上则为 64 位宽。 当你需要一个整数值时应使用 int 类型，除非你有特殊的理由使用固定大小或无符号的整数类型。
 #### go语言不接受隐式类型转换
 字符串转整形：
+
 num, _ = strconv.Atoi(str)
+
 整形转字符串：
+
 str := strconv.Itoa(num)
 
 ### 变量
 变量声明用空格隔开
+
 var identifier type
+
 变量声明也可以“分组”成一个语法块。
+
 var identifier1, identifier2 type
+
 指定变量类型，**如果没有初始化，则变量默认为零值**
-默认值
-0 false “”
+
+默认值   0 false “”
 
 :=赋值操作符 
-只能被用在函数体内
+**只能被用在函数体内**
 
 ### 常量
 
 const identifier [type] = value
+
 Go 在不同类型的项之间赋值时需要**显式转换**
+
 常量不能用 := 语法声明  用**const**关键字
 
 **iota**  const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)
