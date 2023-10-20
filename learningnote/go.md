@@ -46,6 +46,8 @@ var identifier1, identifier2 type
 :=赋值操作符 
 **只能被用在函数体内**
 
+
+`_`（下划线）是个特殊的变量名，任何赋予它的值都会被丢弃
 ### 常量
 
 const identifier [type] = value
@@ -113,6 +115,8 @@ if 语句可以在条件表达式前执行一个简单的语句。
 该语句声明的变量作用域仅在 if 之内 
 
 **switch语句**
+
+fallthrough会强制执行后面的代码
 
 **select语句**
 
@@ -247,6 +251,15 @@ make([]T, length, capacity)// capacity 容量为可选参数。
 
 零值切片的值为 nil
 
+### make、new操作
+`new(T)`分配了零值填充的`T`类型的内存空间，并且返回其地址，即一个`*T`类型的值
+
+`new`返回指针
+
+make只能创建`slice`、`map`和`channel`
+
+`make`返回初始化后的（非零）值。
+
 
 ### Range范围
 
@@ -298,6 +311,11 @@ var Book1 Books
 访问 Book1.title
 
 可以指针访问结构体
+
+#### 匿名字段
+
+类似于类的继承，其中属于其中一个结构体的方法也会使用
+
 
 
 ### 接口
@@ -369,3 +387,8 @@ ch := make(chan int, x)
 tips：x可以定义缓冲区大小，异步
 
 通过range关键字来遍历数据
+
+### panic和recover函数
+
+### 反射reflect
+
