@@ -95,4 +95,22 @@ encodeURIComponent() 函数 与 encodeURI() 函数的区别
 请注意 encodeURIComponent() 函数 与 encodeURI() 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。
 因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号
 
+补充：
 
+\x开头编码
+
+```
+\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c
+中文是： 你好世界
+```
+
+utf-8编码，但数据类型是字符串类型
+
+只要将字符串中的 " \x " 改为 " % " 利用urllib中的unquote方法解码就可以得到中文了，因为url中的中文utf-8编码和这里的区别就是url中编码是%开头
+
+```python
+s = '\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c'
+s = s.encode('unicode_escape')
+ss = s.decode('utf-8').replace('\\x', '%')
+un = parse.unquote(ss)
+```
